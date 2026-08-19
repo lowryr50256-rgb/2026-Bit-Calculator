@@ -1,6 +1,5 @@
 # Ask user for width and loop until they
 # enter a number that is more than zero
-from P_04_get_wisth import width
 
 
 def int_check(question, low):
@@ -10,7 +9,7 @@ def int_check(question, low):
 
         try:
              # ask the user for a number
-             response = float(input(question))
+             response = int(input(question))
 
              # check that the number is more than zero
 
@@ -33,4 +32,9 @@ for item in range(0,  2):
     width = int_check("width: ", 1)
     print(width)
 
+for item in range(0, 2):
+    height = int_check("height: ", 1)
+    print(height)
+
     print()
+2
