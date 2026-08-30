@@ -87,6 +87,9 @@ def get_filetype():
 
 # Main routine gose here
 
+ # Ask user for width and loop until they
+# enter a number that is more than zero
+
 # Display instructions if requested
 want_instructions = input("Press <enter> to read the instructions "
                            "or any key to continue ")
@@ -111,10 +114,11 @@ while True:
         else:
             file_type = "image:"
 
-   if file_type == "image":
-       image_ans = image_calc()
-       print(image_ans)
-   elif file_type == "integer":
+    if file_type == "image":
+        image_ans = image_calc()
+        print(image_ans)
+    elif file_type == "integer":
+        pass
 
 
 
