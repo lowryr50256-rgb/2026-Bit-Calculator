@@ -84,6 +84,41 @@ def get_filetype():
                 else:
                       print("Please enter a valid file type")
 
+# calculates how many bits are needed to represent an integer
+def integer_calc():
+    # Ask the user to enter an interger (more than / equal to 0)
+    integer = int_check("Integer: ",  0)
+
+    # convert the interger to binary and work out the number of bits needed
+    raw_binary = bin(integer)
+
+    # remove the leading  '0b' from the raw binary conversion
+    binary = raw_binary[2:]
+    num_bits = len(binary)
+
+
+    # Set up answer and return it
+    answer =f"{integer} in binary is {binary}. we ned {num_bits} to represent it."
+
+    return answer
+
+# Calculates number of bits needed to represent text in ascii
+def calc_text_bits():
+
+    # Get text from user
+    resource = input("Enter some text...")
+
+    # Calculate bits needed
+    num_chars = len(resource)
+    num_bits = num_chars * 8
+
+    # Set up answer and return it
+    answer = (f"{resource} has {num_chars} characters."
+              f"\nWe need {num_chars} x 8 bits to represent it"
+              f"\nwhich is {num_bits} bits")
+
+    return answer
+
 
 # Main routine gose here
 
@@ -118,7 +153,12 @@ while True:
         image_ans = image_calc()
         print(image_ans)
     elif file_type == "integer":
-        pass
+        integer_ans = integer_calc()
+        print(integer_ans)
+    else:
+        text_ans = calc_text_bits()
+        print(text_ans)
+
 
 
 
